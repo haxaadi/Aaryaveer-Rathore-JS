@@ -166,14 +166,14 @@
 </head>
 <body>
     <div class="container">
-        <!-- Alert Buttons -->
+
         <div class="feature-card">
             <h2><i class="fas fa-bell"></i>Alert Buttons</h2>
             <button onclick="alert('Button 1 Alert!')">Alert 1</button>
             <button onclick="alert('Button 2 Alert!')">Alert 2</button>
         </div>
 
-        <!-- Math Operations -->
+      
         <div class="feature-card">
             <h2><i class="fas fa-calculator"></i>Math Operations</h2>
             <input type="number" id="num1" placeholder="Number 1">
@@ -183,7 +183,7 @@
             <div class="result-display" id="mathResult">Result will show here</div>
         </div>
 
-        <!-- Even/Odd Check -->
+      
         <div class="feature-card">
             <h2><i class="fas fa-sort-numeric-up"></i>Even/Odd Check</h2>
             <input type="number" id="evenOddInput" placeholder="Enter a number">
@@ -191,7 +191,7 @@
             <div class="result-display" id="evenOddResult">Result will show here</div>
         </div>
 
-        <!-- Voting Age Check -->
+ 
         <div class="feature-card">
             <h2><i class="fas fa-user-check"></i>Voting Age Check</h2>
             <input type="number" id="ageInput" placeholder="Enter age">
@@ -199,7 +199,7 @@
             <div class="result-display" id="votingResult">Result will show here</div>
         </div>
 
-        <!-- Prime Numbers -->
+        
         <div class="feature-card">
             <h2><i class="fas fa-prime"></i>Prime Numbers</h2>
             <input type="number" id="primeInput" placeholder="Find primes up to">
@@ -207,7 +207,7 @@
             <div class="result-display" id="primeResult">Primes will show here</div>
         </div>
 
-        <!-- Registration Form -->
+  
         <div class="feature-card">
             <h2><i class="fas fa-user-plus"></i>Registration Form</h2>
             <form id="regForm" onsubmit="return handleFormSubmit(event)">
@@ -219,7 +219,7 @@
             </form>
         </div>
 
-        <!-- Color Changer -->
+      
         <div class="feature-card">
             <h2><i class="fas fa-palette"></i>Color Changer</h2>
             <div class="color-preview circle" onclick="changeColor(this)" style="background-color: #e74c3c" data-color-index="0">
@@ -227,7 +227,7 @@
             </div>
         </div>
 
-        <!-- Grade Calculator -->
+       
         <div class="feature-card">
             <h2><i class="fas fa-graduation-cap"></i>Grade Calculator</h2>
             <input type="number" id="marksInput" placeholder="Enter marks">
@@ -235,7 +235,7 @@
             <div class="result-display" id="gradeResult">Grade will show here</div>
         </div>
 
-        <!-- Interaction Counters -->
+       
         <div class="feature-card">
             <h2><i class="fas fa-mouse-pointer"></i>Interaction Counters</h2>
             <button class="counter-btn" id="counterButton">
@@ -248,7 +248,7 @@
             </div>
         </div>
 
-        <!-- Color Mixer -->
+       
         <div class="feature-card">
             <h2><i class="fas fa-paint-brush"></i>Color Mixer</h2>
             <div class="color-mixer">
@@ -269,7 +269,7 @@
             </div>
         </div>
 
-        <!-- Calculator -->
+       
         <div class="feature-card">
             <h2><i class="fas fa-calculator"></i>Calculator</h2>
             <div class="display-screen" id="display">0</div>
@@ -299,10 +299,7 @@
     </div>
 
     <script>
-        // All previous JavaScript functions remain the same as in the original file
-        // Feature implementations are identical to the previous version
-        
-        // Math Operations
+       
         function performOperation(operation) {
             const num1 = parseFloat(document.getElementById('num1').value);
             const num2 = parseFloat(document.getElementById('num2').value);
@@ -312,21 +309,21 @@
             document.getElementById('mathResult').textContent = `Result: ${result}`;
         }
 
-        // Even/Odd Check
+        
         function checkEvenOdd() {
             const number = parseInt(document.getElementById('evenOddInput').value);
             document.getElementById('evenOddResult').textContent = 
                 number % 2 === 0 ? "Even" : "Odd";
         }
 
-        // Voting Age Check
+       
         function checkVotingAge() {
             const age = parseInt(document.getElementById('ageInput').value);
             document.getElementById('votingResult').textContent = 
                 age >= 18 ? "Eligible to vote" : "Not eligible to vote";
         }
 
-        // Prime Numbers
+       
         function isPrime(num) {
             for(let i = 2; i <= Math.sqrt(num); i++) {
                 if(num % i === 0) return false;
@@ -343,14 +340,14 @@
             document.getElementById('primeResult').textContent = primes.join(', ');
         }
 
-        // Form Handling
+       
         function handleFormSubmit(event) {
             event.preventDefault();
             alert('Form submitted successfully!');
             event.target.reset();
         }
 
-        // Color Changer
+        
         const colors = ['#e74c3c', '#2ecc71', '#9b59b6'];
         function changeColor(circle) {
             const currentIndex = parseInt(circle.getAttribute('data-color-index')) || 0;
@@ -360,7 +357,7 @@
             circle.textContent = colors[newIndex];
         }
 
-        // Grade Calculator
+       
         function calculateGrade() {
             const marks = parseInt(document.getElementById('marksInput').value);
             let grade;
@@ -378,7 +375,7 @@
             document.getElementById('gradeResult').textContent = `Grade: ${grade}`;
         }
 
-        // Interaction Counters
+      
         let clickCount = 0, dblClickCount = 0, hoverCount = 0;
         const counterButton = document.getElementById('counterButton');
         
@@ -394,7 +391,7 @@
             document.getElementById('hoverCount').textContent = ++hoverCount;
         });
 
-        // Color Mixer
+       
         const colorInputs = document.querySelectorAll('.color-mixer input');
         const colorPreview = document.getElementById('colorPreview');
         function updateColor() {
@@ -409,7 +406,7 @@
         colorInputs.forEach(input => input.addEventListener('input', updateColor));
         updateColor();
 
-        // Calculator Functions
+      
         function appendToDisplay(value) {
             const display = document.getElementById('display');
             if (display.textContent === '0' && value !== '.') {
